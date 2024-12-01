@@ -8,7 +8,7 @@ import io
 app = Flask(__name__)
 
 # Load model yang sudah disimpan
-model = tf.keras.models.load_model('./model/dead_chicken_model.h5')
+model = tf.keras.models.load_model('./model/dead_chicken.h5')
 
 # Preprocessing fungsi untuk gambar
 def preprocess_image(image, target_size=(224, 224)):
@@ -21,36 +21,27 @@ def preprocess_image(image, target_size=(224, 224)):
     return image
 
 @app.route('/predict', methods=['POST'])
-@app.route('/predict', methods=['POST'])
 def predict():
     """
     Endpoint untuk menerima gambar dan memberikan prediksi.
     """
     try:
-        # Periksa apakah file dikirimkan
         if 'file' not in request.files:
             return jsonify({'error': 'No file part in the request'}), 400
         
-        # Ambil file gambar dari request
         file = request.files['file']
         
-        # Buka file gambar
         image = Image.open(io.BytesIO(file.read()))
         
-        # Preprocessing gambar
         processed_image = preprocess_image(image)
         
-        # Prediksi menggunakan model
         prediction = model.predict(processed_image)[0][0]
         
-        # Tentukan hasil prediksi (dead chicken: boolean)
         dead_chicken = bool(prediction > 0.5)  # Konversi ke tipe Python bool
         
-        # Mengembalikan hasil prediksi
         return jsonify({'dead_chicken': dead_chicken})
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-# Jalankan server Flask
 if __name__ == '__main__':
     app.run(debug=True)
