@@ -1,4 +1,4 @@
-# **Dead Chicken Detection Project** 🐔💀
+# **Dead Chicken Detection Model - Machine Learning** 🐔💀
 
 ## **1. Introduction** 🎯
 The **Dead Chicken Detection Project** is a machine learning-based solution designed to automatically detect dead chickens in poultry farms using camera feeds. The aim is to automate the detection process, improving animal welfare and farm management efficiency.
