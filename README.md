@@ -144,7 +144,9 @@ The API will return a JSON response with the classification result:
 
 ### Visualizations 📈
 - **ROC Curve**: Shows the model's trade-off between true positive rate and false positive rate.
+![Training vs. Validation Accuracy/Loss](images/roc-curve.png)
 - **Training vs. Validation Accuracy/Loss**: Plots to track the model's learning progress and detect overfitting.
+![Training vs. Validation Accuracy/Loss](images/accuracy-loss-plots.png)
 
 ---
 
