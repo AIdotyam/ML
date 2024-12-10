@@ -4,10 +4,8 @@ from PIL import Image
 import numpy as np
 import io
 
-# Inisialisasi Flask
 app = Flask(__name__)
 
-# Load model yang sudah disimpan
 model = tf.keras.models.load_model('./model/dead_chicken.h5')
 
 # Preprocessing fungsi untuk gambar
@@ -37,7 +35,7 @@ def predict():
         
         prediction = model.predict(processed_image)[0][0]
         
-        dead_chicken = bool(prediction > 0.5)  # Konversi ke tipe Python bool
+        dead_chicken = bool(prediction > 0.5)
         
         return jsonify({'dead_chicken': dead_chicken})
     except Exception as e:
