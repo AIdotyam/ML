@@ -180,7 +180,9 @@ pip install -r requirements.txt
 ---
 
 # 11. License 📜
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 ---
 
