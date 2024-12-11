@@ -137,10 +137,10 @@ The API will return a JSON response with the classification result:
 # 8. Results 🏆
 
 ## Model Performance 📊
-- **Training Accuracy**: ~98%
+- **Training Accuracy**: ~93%
 - **Validation Accuracy**: ~95%
-- **Test Accuracy**: ~93%
-- **AUC**: 0.99
+- **Test Accuracy**: ~96%
+- **Test AUC**: 0.99
 
 ### Visualizations 📈
 - **ROC Curve**: Shows the model's trade-off between true positive rate and false positive rate.
